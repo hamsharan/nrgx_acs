@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sin: 
+  full_name: MyString
+  birthDate: 2019-12-13 04:02:37
+
+two:
+  sin: 
+  full_name: MyString
+  birthDate: 2019-12-13 04:02:37
