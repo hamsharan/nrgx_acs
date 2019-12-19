@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_13_092659) do
+ActiveRecord::Schema.define(version: 2019_12_19_212557) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,9 +19,8 @@ ActiveRecord::Schema.define(version: 2019_12_13_092659) do
     t.string "name"
     t.boolean "branch_account"
     t.integer "parent_account_id"
-    t.integer "person_id"
-    t.integer "legal_person_id"
     t.float "balance"
+    t.string "status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -38,6 +37,26 @@ ActiveRecord::Schema.define(version: 2019_12_13_092659) do
     t.integer "sin"
     t.string "full_name"
     t.datetime "birthDate"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "transactions", force: :cascade do |t|
+    t.integer "primary_account_id"
+    t.string "type"
+    t.integer "secondary_account_id"
+    t.float "amount"
+    t.string "alphanumeric_code"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "user_accounts", force: :cascade do |t|
+    t.string "person_id"
+    t.string "integer"
+    t.integer "legal_person_id"
+    t.integer "account_id"
+    t.boolean "branch_account"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
