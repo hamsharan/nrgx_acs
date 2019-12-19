@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  account_id: 1
+  type: 
+  account2_id: 1
+  amount: 
+  alphanumeric_code: MyString
+
+two:
+  account_id: 1
+  type: 
+  account2_id: 1
+  amount: 
+  alphanumeric_code: MyString
