@@ -19,12 +19,15 @@ ActiveRecord::Schema.define(version: 2019_12_13_092659) do
     t.string "name"
     t.boolean "branch_account"
     t.integer "parent_account_id"
+    t.integer "person_id"
+    t.integer "legal_person_id"
+    t.float "balance"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "legal_people", force: :cascade do |t|
-    t.integer "FBN"
+    t.integer "fbn"
     t.string "companyName"
     t.string "fantasy_name"
     t.datetime "created_at", precision: 6, null: false

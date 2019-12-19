@@ -4,6 +4,9 @@ class CreateAccounts < ActiveRecord::Migration[6.0]
       t.string :name
       t.boolean :branch_account
       t.integer :parent_account_id
+      t.integer :person_id
+      t.integer :legal_person_id
+      t.float :balance
 
       t.timestamps
     end
