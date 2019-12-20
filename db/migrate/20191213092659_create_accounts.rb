@@ -5,7 +5,7 @@ class CreateAccounts < ActiveRecord::Migration[6.0]
       t.boolean :branch_account
       t.integer :parent_account_id
       t.float :balance
-      t.string :status
+      t.column :status, :integer, default:1
 
       t.timestamps
     end

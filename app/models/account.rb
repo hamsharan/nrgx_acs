@@ -2,7 +2,7 @@ class Account < ApplicationRecord
     belongs :user_account
     has_many :accounts
 
-    STATUS = ["cancelled","active","locked"]
+    enum status = {cancelled:0,active:1,locked:2}
 
     validates :balance, presence: true, numericality: true
     validates :status, presence:true,inclusion: { in: STATUS}

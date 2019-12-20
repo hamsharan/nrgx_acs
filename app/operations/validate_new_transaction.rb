@@ -4,9 +4,9 @@ module Operations
         @amount = amount.try(:to_i)
         @transaction_type = transaction_type
         @account_id = primary_account_id
-        @account = Account.where(id: @primary_account_id).first
+        @account = Account.find_by(id: @primary_account_id)
         @secondary_account_id = secondary_account_id
-        @secondary_account = Account.where(id:@secondary_account_id).first
+        @secondary_account = Account.find_by(id:@secondary_account_id)
         @errors = []
     end
 
@@ -51,7 +51,7 @@ module Operations
       if !@secondary_account.branch_account?
         @errors<< "Can not transfer to a parent account"
       end
-      if @secondary_account_id.status == '!active'
+      if @secondary_account_id.status !== 'active'
         @errors<< "only active branch accounts can accept transfers"
       end
       if @account.balance - @amount < 0

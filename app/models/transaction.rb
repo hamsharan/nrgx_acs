@@ -17,5 +17,5 @@ class Transaction < ApplicationRecord
     end
   end
 
-  t.timestamps
+
 end

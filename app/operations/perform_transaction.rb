@@ -5,8 +5,8 @@ module Operations
         @transaction_type = transaction_type
         @primary_account_id = primary_account_id
         @secondary_account_id = secondary_account_id
-        @account = Account.where(id: @primary_account_id).first
-        @secondary_account = Account.where(id: @secondary_account_id).first
+        @account = Account.find_by(id: @primary_account_id)
+        @secondary_account = Account.find_by(id: @secondary_account_id)
     end
 
     def execute!()
