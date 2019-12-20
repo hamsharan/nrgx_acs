@@ -15,7 +15,7 @@ class Api::V1::AccountsController < Api::V1::BaseController
       if errors.size > 0
           render json: { errors: errors }, status: 402
       else
-          bank_account = ::Operations::PerformTransaction.new(
+          account = ::Operations::PerformTransaction.new(
               amount: amount,
               transaction_type: transaction_type,
               primary_account_id: account_id
@@ -23,6 +23,18 @@ class Api::V1::AccountsController < Api::V1::BaseController
 
           render json: { balance: account.balance }
       end
+  end
+
+  def change_status
+    account_id = params[:account_id]
+    status = params[:status]
+    account = Account.find_by(id:account_id)
+    if account.status = 'cancelled'
+      render json: { errors: 'errors cant change cancelled account status' }, status: 402
+    else
+      account.status = params[:status]
+      render json: {account_id: account.id , status:account.status}
+    end
   end
 
   def index
