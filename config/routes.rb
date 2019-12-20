@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     namespace :api do
       namespace :v1 do
         resources :persons, only: [:index, :create, :destroy, :update]
+        resources :accounts, only: [:new_transaction, :change_status, :index, :create, :destroy, :update]
       end
     end
 end
