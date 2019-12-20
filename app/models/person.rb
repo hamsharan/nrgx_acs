@@ -1,5 +1,5 @@
 class Person < ApplicationRecord
-  has_many :accounts, through:user_account
+  has_many :accounts, through: UserAccount
 
 
   validates :full_name, presence: true
