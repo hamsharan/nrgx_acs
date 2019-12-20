@@ -36,3 +36,14 @@ Ruby (ruby-2.6.5) and Rails (rails (6.0.1)) and psql (PostgreSQL) 12.1
                                       
                                       DELETE /api/v1/accounts/:id(.:format)                                                           api/v1/accounts#destroy
 
+
+TDL
+- Front end 
+  - getting react working by making components js.jsx to be detected by react rails 
+  - or just create CRUD APPlication routes and just make an html.erb simple web app pages and use bootstrap css
+-Front end -polish
+  - style and do UI/UX for the frontend (ideally in react)
+- Tests
+  - Just started testing but ran out of time
+  - But Def Would love to have Tests for all Models/controllers/and Modules
+  
